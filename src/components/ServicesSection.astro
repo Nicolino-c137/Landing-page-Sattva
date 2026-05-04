@@ -1,0 +1,41 @@
+---
+const CATALOG = 'https://drive.google.com/file/d/1WA_-5EkAB27TlwL1jpZfBERj3c3sOcHW/view';
+---
+
+<section
+  id="servicios"
+  class="section relative py-32 lg:py-48 px-4 sm:px-6 lg:px-8 overflow-hidden"
+  style="background-image: url('/images/frases2.jpg'); background-size: cover; background-position: center 70%; background-attachment: fixed;"
+>
+  <!-- Dark overlay -->
+  <div
+    class="absolute inset-0"
+    style="background: rgba(30, 35, 25, 0.7);"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 wrapper-md">
+    <p class="label-text mb-6 fade-in" style="margin-bottom:1.5rem; color: #C9A67B;">Nuestros Circuitos</p>
+
+    <h2 class="heading-xl text-white mb-8 fade-in" style="margin-bottom:1rem;">
+      Son un conjunto de<br />servicios de Spa
+    </h2>
+
+    <p class="body-lg mb-6 fade-in" style="color: rgba(255,255,255,0.75);">
+      Agrupados con distintas finalidades, pero todas con un mismo objetivo…
+    </p>
+    <p class="body-lg fade-in" style="color: rgba(255,255,255,0.75); margin-bottom: 2rem;">
+      Cada uno está diseñado para que la/s persona/s disfrute/n una experiencia de bienestar,
+      con todos los sentidos…
+    </p>
+
+    <a
+      href={CATALOG}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-secondary fade-in"
+    >
+      Ver Catálogo Completo
+    </a>
+  </div>
+</section>

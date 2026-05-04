@@ -1,0 +1,36 @@
+---
+const images = [
+  { src: '/images/interior1.jpg', alt: 'Sattva Spa — zona de relajación' },
+  { src: '/images/interior3.jpg', alt: 'Sattva Spa — espacio de tratamientos' },
+  { src: '/images/interior5.jpg', alt: 'Sattva Spa — área de bienestar' },
+  { src: '/images/interior6.jpg', alt: 'Sattva Spa — sala de descanso' },
+];
+---
+
+<section id="inmersion" class="section py-24 lg:py-32 px-4 sm:px-6 lg:px-8" style="background-color: #E5DED1;">
+  <div class="wrapper">
+
+    <div class="text-center mb-14 fade-in" style="margin-bottom:1.5rem;">
+      <h2 class="heading-xl text-ink">Inmersión</h2>
+      <p class="heading-md mt-3 italic" style="color: #7D8F69; font-size: clamp(1.1rem, 2vw, 1.5rem);">
+        El espacio Sattva
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+      {images.map(img => (
+        <div class="gallery-card overflow-hidden rounded-2xl" style="aspect-ratio: 3/4;">
+          <img
+            src={img.src}
+            alt={img.alt}
+            loading="lazy"
+            width="450"
+            height="600"
+            class="gallery-img w-full h-full object-cover"
+          />
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

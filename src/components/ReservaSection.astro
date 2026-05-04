@@ -1,0 +1,170 @@
+---
+const servicios = [
+  'Circuito Hidroterapia',
+  'Circuito Relax',
+  'Circuito Integral',
+  'Circuito Holístico',
+  'Circuito Conciencia Plana',
+  'Circuito Sattvico',
+  'Circuito Amor Propio',
+  'Circuito Armonizante',
+  'Circuito Noche de Spa',
+  'Circuito Tarde de Spa',
+  'Circuitos Grupales',
+  'Otro / Consultar',
+];
+---
+
+<section
+  id="reserva"
+  class="section relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
+>
+  <!-- Overlay -->
+  <div
+    class="absolute inset-0"
+    style="background: rgba(245, 242, 235, 0.92);"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 wrapper-sm">
+    <div class="text-center mb-12 fade-in" style="margin-bottom:1.5rem;">
+      <p class="label-text mb-4" style="color: #7D8F69;">Contacto</p>
+      <h2 class="heading-lg text-ink">Reservá tu cita</h2>
+      <p class="body-lg mt-4" style="color: #6a6a6a;">
+        Completá el formulario y te respondemos por WhatsApp a la brevedad.
+      </p>
+    </div>
+
+    <form id="reserva-form" class="space-y-5 fade-in" novalidate>
+      <div class="grid sm:grid-cols-2 gap-5" style="margin-bottom:1.5rem;">
+        <div>
+          <label for="nombre" class="label-text block mb-2" style="color: #7D8F69;">Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Tu nombre"
+            required
+            class="form-input"
+          />
+        </div>
+        <div>
+          <label for="apellido" class="label-text block mb-2" style="color: #7D8F69;">Apellido</label>
+          <input
+            type="text"
+            id="apellido"
+            name="apellido"
+            placeholder="Tu apellido"
+            required
+            class="form-input"
+          />
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5" style="margin-bottom:1.5rem;">
+        <div>
+          <label for="fecha" class="label-text block mb-2" style="color: #7D8F69;">Fecha deseada</label>
+          <input
+            type="date"
+            id="fecha"
+            name="fecha"
+            required
+            class="form-input"
+          />
+        </div>
+        <div>
+          <label for="servicio" class="label-text block mb-2" style="color: #7D8F69;">Servicio o Circuito</label>
+          <select id="servicio" name="servicio" required class="form-input" style="cursor: pointer;">
+            <option value="" disabled selected>Seleccioná un servicio</option>
+            {servicios.map(s => (
+              <option value={s}>{s}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="mensaje" class="label-text block mb-2" style="color: #7D8F69;">Mensaje (opcional)</label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          placeholder="Contanos algo más sobre tu reserva..."
+          rows="4"
+          class="form-input resize-none"
+        ></textarea>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+        <button type="submit" class="btn-primary gap-3 py-4" style="display: inline-flex; align-items: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+          </svg>
+          Enviar por WhatsApp
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('reserva-form') as HTMLFormElement | null;
+  const REQUIRED_FIELDS = ['nombre', 'apellido', 'fecha', 'servicio'];
+
+  function markField(name: string, hasError: boolean) {
+    const el = form?.elements.namedItem(name) as HTMLElement | null;
+    if (!el) return;
+    if (hasError) {
+      el.style.borderColor = '#c0392b';
+      el.style.backgroundColor = '#fff5f5';
+    } else {
+      el.style.borderColor = '';
+      el.style.backgroundColor = '';
+    }
+  }
+
+  // Limpia el error visual al escribir en cada campo
+  REQUIRED_FIELDS.forEach(name => {
+    const el = form?.elements.namedItem(name) as HTMLElement | null;
+    el?.addEventListener('input', () => markField(name, false));
+    el?.addEventListener('change', () => markField(name, false));
+  });
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form) return;
+
+    const data = new FormData(form);
+    let valid = true;
+
+    REQUIRED_FIELDS.forEach(name => {
+      const val = (data.get(name) as string | null)?.trim() ?? '';
+      if (!val) {
+        markField(name, true);
+        valid = false;
+      }
+    });
+
+    if (!valid) return;
+
+    const nombre  = (data.get('nombre')   as string).trim();
+    const apellido= (data.get('apellido') as string).trim();
+    const fecha   = (data.get('fecha')    as string).trim();
+    const servicio= (data.get('servicio') as string).trim();
+    const mensaje = (data.get('mensaje')  as string).trim();
+
+    const lines = [
+      `Hola! Me gustaría reservar una cita en Sattva Spa Integral 🌿`,
+      ``,
+      `Nombre: ${nombre} ${apellido}`,
+      `Fecha deseada: ${fecha}`,
+      `Servicio: ${servicio}`,
+    ];
+    if (mensaje) lines.push(`${mensaje}`);
+
+    const text = encodeURIComponent(lines.join('\n'));
+    window.open(
+      `https://api.whatsapp.com/send/?phone=2644130566&text=${text}&type=phone_number&app_absent=0`,
+      '_blank'
+    );
+  });
+</script>

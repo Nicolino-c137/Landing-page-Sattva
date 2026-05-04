@@ -1,0 +1,28 @@
+---
+const items = [
+  'Hidroterapia',
+  'Masoterapia',
+  'Reiki',
+  'Yoga',
+  'Meditación',
+  'Limpieza Energética',
+  'Tratamiento de Pies',
+  'Meriendas Especiales',
+  'Circuitos de Spa',
+  'Bienestar Integral',
+];
+
+const separator = '·';
+---
+
+<div class="marquee-wrapper overflow-hidden py-4" style="background-color: #7D8F69;" aria-hidden="true">
+  {[0, 1, 2, 3].map(() => (
+    <div class="marquee-track">
+      {items.map(item => (
+        <span class="label-text text-white/90 px-6 whitespace-nowrap">
+          {item} <span class="opacity-50 mx-2">{separator}</span>
+        </span>
+      ))}
+    </div>
+  ))}
+</div>

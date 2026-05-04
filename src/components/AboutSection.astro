@@ -1,0 +1,58 @@
+---
+const WHATSAPP = 'https://api.whatsapp.com/send/?phone=2644130566&text&type=phone_number&app_absent=0';
+---
+
+<section id="sobre-nosotros" class="section py-24 lg:py-32 px-4 sm:px-6 lg:px-8" style="background-color: #F9F7F2;">
+  <div class="wrapper">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- Text -->
+      <div class="order-2 lg:order-1">
+        <p class="label-text mb-5 fade-in" style="margin-bottom:1.5rem; color: #7D8F69;">Sobre Nosotros</p>
+        <h2 class="heading-lg mb-8 text-ink fade-in" style="margin-bottom:1rem;">
+          El primer Spa en San Juan<br />
+          <em>especializado en bienestar</em>
+        </h2>
+
+        <div class="space-y-5 fade-in" style="margin-bottom: 2rem;">
+          <p class="body-lg" style="margin-bottom:1rem; color: #5a5a5a;">
+            Somos el primer Spa en San Juan destacado y especializado en obsequios de bienestar.
+            Nuestra principal actividad es la realización de circuitos de Spa, con un estilo único que enamora.
+          </p>
+          <p class="body-lg" style="margin-bottom:1rem; color: #5a5a5a;">
+            Tenemos distintas líneas de circuitos, cada una con opciones similares para que puedas elegir la que más se adapte a lo que buscás.<br />
+            Todas son relajantes — algunas con meriendas especiales, ideales para agasajos o para compartir con amigas, pareja, familia.
+          </p>
+          <p class="body-lg" style="margin-bottom:1rem; color: #5a5a5a;">
+            Si bien nos destacamos por nuestros Circuitos, los servicios también se pueden contratar de manera individual.
+          </p>
+        </div>
+
+        <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn-primary fade-in" style="margin-top: 1rem;">
+          Consultanos
+        </a>
+      </div>
+
+      <!-- Image -->
+      <div class="order-1 lg:order-2 lg:self-start fade-in">
+        <div class="relative">
+          <div
+            class="absolute -top-4 -left-4 w-full h-full rounded-3xl"
+            style="background-color: #E5DED1;"
+            aria-hidden="true"
+          ></div>
+          <img
+            src="/images/sobre_nosotros.png"
+            alt="Interior relajante de Sattva Spa Integral"
+            loading="lazy"
+            width="700"
+            height="700"
+            class="relative rounded-3xl w-full object-cover"
+            style="aspect-ratio: 1 / 1;"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
