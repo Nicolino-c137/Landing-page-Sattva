@@ -2,10 +2,10 @@
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 const navLinks = [
-  { href: '/#sobre-nosotros', label: 'Nosotros' },
-  { href: '/#servicios', label: 'Servicios' },
-  { href: '/#inmersion', label: 'Inmersión' },
-  { href: '/#ubicacion', label: 'Ubicación' },
+  { href: `${base}#sobre-nosotros`, label: 'Nosotros' },
+  { href: `${base}#servicios`, label: 'Servicios' },
+  { href: `${base}#inmersion`, label: 'Inmersión' },
+  { href: `${base}#ubicacion`, label: 'Ubicación' },
 ];
 
 const INSTAGRAM = 'https://www.instagram.com/sattva_spa_integral';
@@ -15,7 +15,7 @@ const INSTAGRAM = 'https://www.instagram.com/sattva_spa_integral';
   <nav style="margin-top: 0.8rem; margin-bottom:0.8rem;" class="flex items-center justify-between px-8 sm:px-6 py-7 w-full">
 
     <!-- Logo + nombre -->
-    <a href="/" style= "margin-left: 1rem;" class="flex items-center gap-3" aria-label="Inicio — Sattva Spa Integral">
+    <a href={base} style= "margin-left: 1rem;" class="flex items-center gap-3" aria-label="Inicio — Sattva Spa Integral">
       <img id="nav-logo-img" src={`${base}logo-outline.svg`} alt="" class="h-9 w-auto transition-all duration-300" />
       <span
         id="nav-brand-text"

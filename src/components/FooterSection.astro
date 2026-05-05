@@ -3,11 +3,11 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const year = new Date().getFullYear();
 
 const navLinks = [
-  { href: '/#sobre-nosotros', label: 'Nosotros' },
-  { href: '/#servicios', label: 'Servicios' },
-  { href: '/#inmersion', label: 'Inmersión' },
-  { href: '/#ubicacion', label: 'Ubicación' },
-  { href: '/#reserva', label: 'Reservar' },
+  { href: `${base}#sobre-nosotros`, label: 'Nosotros' },
+  { href: `${base}#servicios`, label: 'Servicios' },
+  { href: `${base}#inmersion`, label: 'Inmersión' },
+  { href: `${base}#ubicacion`, label: 'Ubicación' },
+  { href: `${base}#reserva`, label: 'Reservar' },
 ];
 
 const socials = [
