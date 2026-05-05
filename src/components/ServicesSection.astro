@@ -1,11 +1,12 @@
 ---
 const CATALOG = 'https://drive.google.com/file/d/1WA_-5EkAB27TlwL1jpZfBERj3c3sOcHW/view';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <section
   id="servicios"
   class="section relative py-32 lg:py-48 px-4 sm:px-6 lg:px-8 overflow-hidden"
-  style="background-image: url('/images/frases2.jpg'); background-size: cover; background-position: center 70%; background-attachment: fixed;"
+  style={`background-image: url('${base}images/frases2.jpg'); background-size: cover; background-position: center 70%; background-attachment: fixed;`}
 >
   <!-- Dark overlay -->
   <div

@@ -1,11 +1,12 @@
 ---
 const WHATSAPP = 'https://api.whatsapp.com/send/?phone=2644130566&text&type=phone_number&app_absent=0';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <section
   id="inicio"
   class="section relative min-h-screen flex items-center justify-center overflow-hidden"
-  style="background-image: url('/images/frases4.jpg'); background-size: cover; background-position: center;"
+  style={`background-image: url('${base}images/frases4.jpg'); background-size: cover; background-position: center;`}
 >
   <!-- Overlay gradient -->
   <div

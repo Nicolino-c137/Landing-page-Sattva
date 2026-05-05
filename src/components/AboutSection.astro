@@ -1,5 +1,6 @@
 ---
 const WHATSAPP = 'https://api.whatsapp.com/send/?phone=2644130566&text&type=phone_number&app_absent=0';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <section id="sobre-nosotros" class="section py-24 lg:py-32 px-4 sm:px-6 lg:px-8" style="background-color: #F9F7F2;">
@@ -42,7 +43,7 @@ const WHATSAPP = 'https://api.whatsapp.com/send/?phone=2644130566&text&type=phon
             aria-hidden="true"
           ></div>
           <img
-            src="/images/sobre_nosotros.png"
+            src={`${base}images/sobre_nosotros.png`}
             alt="Interior relajante de Sattva Spa Integral"
             loading="lazy"
             width="700"
