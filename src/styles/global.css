@@ -122,7 +122,6 @@ body {
 
 /* ===== BUTTONS ===== */
 .btn-primary {
-  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background-color: #7D8F69;
@@ -168,7 +167,6 @@ body {
 }
 
 .btn-outline-light {
-  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background-color: transparent;

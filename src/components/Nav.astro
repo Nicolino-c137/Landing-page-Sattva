@@ -43,6 +43,7 @@ const INSTAGRAM = 'https://www.instagram.com/sattva_spa_integral';
     <div class="flex items-center gap-4" style="margin-right: 1rem;">
       <!-- Instagram CTA desktop -->
       <a
+        id="instagram-desktop"
         href={INSTAGRAM}
         target="_blank"
         rel="noopener noreferrer"
@@ -93,6 +94,7 @@ const INSTAGRAM = 'https://www.instagram.com/sattva_spa_integral';
       ))}
       <li class="pt-2">
         <a
+          id="instagram-mobile"
           href={INSTAGRAM}
           target="_blank"
           rel="noopener noreferrer"
@@ -120,7 +122,7 @@ const INSTAGRAM = 'https://www.instagram.com/sattva_spa_integral';
   const brandText = document.getElementById('nav-brand-text');
   const logoImg = document.getElementById('nav-logo-img') as HTMLImageElement | null;
   const navLinks = nav?.querySelectorAll('ul:first-of-type a');
-  const instagramBtn = nav?.querySelector('a[href*="instagram"]') as HTMLElement | null;
+  const instagramBtn = document.getElementById('instagram-desktop') as HTMLElement | null;
   const hamburgerLines = menuBtn?.querySelectorAll('span');
 
   window.addEventListener('scroll', () => {
